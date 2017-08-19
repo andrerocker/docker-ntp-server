@@ -6,5 +6,6 @@ RUN apk add --no-cache \
 	coreutils \
 	chrony \
 	vim
+COPY chronyd.sh /usr/bin/
 
-CMD ["/usr/sbin/chronyd", "-d", "-f", "/var/lib/chrony/chrony.conf"]
+ENTRYPOINT ["chronyd.sh"]
